@@ -1,0 +1,160 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "f3facf30b365a736220790a6060d791b",
+    "content-hash": "491bd87f29cb607a6db929a1d3b4b5bf",
+    "packages": [
+        {
+            "name": "back-2-95/fields",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/back-2-95/fields.git",
+                "reference": "52007642c4d815fa5b231374e365a85f8c6950bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/back-2-95/fields/zipball/52007642c4d815fa5b231374e365a85f8c6950bc",
+                "reference": "52007642c4d815fa5b231374e365a85f8c6950bc",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "zendframework/zend-config": "2.*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BackTo95\\Fields\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Marko Korhonen",
+                    "email": "marko.korhonen@gmail.com"
+                }
+            ],
+            "description": "CRUD Fields API for PHP7",
+            "homepage": "https://github.com/back-2-95/php-crud-fields",
+            "time": "2016-02-29 07:24:38"
+        },
+        {
+            "name": "zendframework/zend-config",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/zend-config.git",
+                "reference": "ef8e216e5a991d6a889c00e9d445d52a5beb01ea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/zend-config/zipball/ef8e216e5a991d6a889c00e9d445d52a5beb01ea",
+                "reference": "ef8e216e5a991d6a889c00e9d445d52a5beb01ea",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5 || ^7.0",
+                "zendframework/zend-stdlib": "^2.7 || ^3.0"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "1.7.*",
+                "phpunit/phpunit": "~4.0",
+                "zendframework/zend-filter": "^2.6",
+                "zendframework/zend-i18n": "^2.6",
+                "zendframework/zend-json": "^2.6.1",
+                "zendframework/zend-servicemanager": "^2.7.5 || ^3.0.3"
+            },
+            "suggest": {
+                "zendframework/zend-filter": "Zend\\Filter component",
+                "zendframework/zend-i18n": "Zend\\I18n component",
+                "zendframework/zend-json": "Zend\\Json to use the Json reader or writer classes",
+                "zendframework/zend-servicemanager": "Zend\\ServiceManager for use with the Config Factory to retrieve reader and writer instances"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev",
+                    "dev-develop": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zend\\Config\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "provides a nested object property based user interface for accessing this configuration data within application code",
+            "homepage": "https://github.com/zendframework/zend-config",
+            "keywords": [
+                "config",
+                "zf2"
+            ],
+            "time": "2016-03-07 15:48:18"
+        },
+        {
+            "name": "zendframework/zend-stdlib",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/zend-stdlib.git",
+                "reference": "0e5191d480c6aa4afe9c31b04d7ac3a3f87b5040"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/zend-stdlib/zipball/0e5191d480c6aa4afe9c31b04d7ac3a3f87b5040",
+                "reference": "0e5191d480c6aa4afe9c31b04d7ac3a3f87b5040",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5 || ^7.0"
+            },
+            "require-dev": {
+                "athletic/athletic": "~0.1",
+                "fabpot/php-cs-fixer": "1.7.*",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev",
+                    "dev-develop": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zend\\Stdlib\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "homepage": "https://github.com/zendframework/zend-stdlib",
+            "keywords": [
+                "stdlib",
+                "zf2"
+            ],
+            "time": "2016-03-07 15:50:04"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "back-2-95/fields": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

@@ -1,0 +1,18 @@
+{
+    "name": "markokorhonen/fields-example",
+    "description": "Example application which shows usage of Fields API",
+    "type": "application",
+    "require": {
+        "back-2-95/fields": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "Marko Korhonen",
+            "email": "marko.korhonen@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "scripts": {
+        "serve": "php -S 0.0.0.0:8080 -t public/ public/index.php"
+    }
+}
