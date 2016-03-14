@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/back-2-95/fields.git",
-                "reference": "52007642c4d815fa5b231374e365a85f8c6950bc"
+                "reference": "900ef3e9c45328544e328d3fa0cfd297890beb29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/back-2-95/fields/zipball/52007642c4d815fa5b231374e365a85f8c6950bc",
-                "reference": "52007642c4d815fa5b231374e365a85f8c6950bc",
+                "url": "https://api.github.com/repos/back-2-95/fields/zipball/900ef3e9c45328544e328d3fa0cfd297890beb29",
+                "reference": "900ef3e9c45328544e328d3fa0cfd297890beb29",
                 "shasum": ""
             },
             "require": {
@@ -43,7 +43,7 @@
             ],
             "description": "CRUD Fields API for PHP7",
             "homepage": "https://github.com/back-2-95/php-crud-fields",
-            "time": "2016-02-29 07:24:38"
+            "time": "2016-03-13 15:46:36"
         },
         {
             "name": "zendframework/zend-config",
