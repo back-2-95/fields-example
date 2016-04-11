@@ -11,6 +11,14 @@ $api->setStorage($storage);
 
 $entity_configuration = $api->getEntityConfiguration('track');
 
+include 'src/form.php';
+
+if (isset($_POST) && !empty($_POST)) {
+    $post = $_POST;
+}
+
+$form->prepare();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +46,19 @@ $entity_configuration = $api->getEntityConfiguration('track');
     <div class="row">
         <div class="col-md-12">
 
-        <form name="<?= $entity_configuration->getName() ?>" action="GET">
+        <?php if (isset($post)): ?>
+            <div class="panel panel-default">
+                <div class="panel-body">
+        <pre>
+        <?php var_dump($post); ?>
+        </pre>
+                    </div></div>
+        <?php endif; ?>
+
+        <?= $this->form()->openTag($form) ?>
+        <?= $this->form()->closeTag() ?>
+
+        <form name="<?= $entity_configuration->getName() ?>" method="post" enctype="multipart/form-data">
         <?php foreach ($entity_configuration->getFields() as $fname => $field): if (isset($field->form)): ?>
 
             <div class="form-group">
@@ -59,7 +79,7 @@ $entity_configuration = $api->getEntityConfiguration('track');
 
                 <?php elseif ($field->form->widget === 'tags'): ?>
 
-                <input name="<?= $fname ?>" type="file">
+                <input name="<?= $fname ?>" type="text">
 
                 <?php endif; ?>
 

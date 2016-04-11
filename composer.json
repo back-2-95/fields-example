@@ -3,7 +3,8 @@
     "description": "Example application which shows usage of Fields API",
     "type": "application",
     "require": {
-        "back-2-95/fields": "dev-master"
+        "back-2-95/fields": "dev-master",
+        "zendframework/zend-form": "2.8.*"
     },
     "authors": [
         {
