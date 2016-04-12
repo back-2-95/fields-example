@@ -46,16 +46,19 @@ foreach ($entity_configuration->getFields() as $fname => $field) {
 
         $el->setLabel($field->name);
 
+        $input = new Input($fname);
+
         // Mark required
         if ($field->required) {
             $el->setAttribute('required', 'required');
+            $input->setRequired(true);
         }
+
+        $inputFilter->add($input);
 
         $form->add($el);
     }
 }
-
-$csrf = new Element\Csrf('security');
 
 $send = new Element('send');
 $send->setValue('Submit');
@@ -63,9 +66,9 @@ $send->setAttributes(array(
     'type'  => 'submit'
 ));
 
-$form->add($csrf)->add($send);
+$form->add($send);
 
-$nameInput = new Input('name');
+
 // configure input... and all others
 
 // attach all inputs

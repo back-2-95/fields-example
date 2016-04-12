@@ -1,0 +1,61 @@
+<?php
+
+$entity_configuration = $this->entity_configuration;
+$form = $this->form;
+
+$form->prepare();
+
+?>
+<div class="jumbotron">
+
+    <div class="container">
+
+        <h1><?= $entity_configuration->getName() ?></h1>
+
+        <p><?= $entity_configuration->getDescription() ?></p>
+
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-md-12">
+
+        <?= $this->form()->openTag($form); ?>
+
+        <?php foreach ($entity_configuration->getFields() as $fname => $field): if (isset($field->form)): ?>
+
+            <div class="form-group">
+
+                <label><?= $field->name ?></label>
+
+                <?php if ($field->form->widget === 'text'): ?>
+
+                    <input name="<?= $fname ?>" type="text" class="form-control" placeholder="Text input">
+
+                <?php elseif ($field->form->widget === 'editor'): ?>
+
+                    <textarea name="<?= $fname ?>" class="form-control editor" rows="3"></textarea>
+
+                <?php elseif ($field->form->widget === 'image'): ?>
+
+                    <input name="<?= $fname ?>" type="file">
+
+                <?php elseif ($field->form->widget === 'tags'): ?>
+
+                    <input name="<?= $fname ?>" type="text">
+
+                <?php endif; ?>
+
+            </div>
+
+        <?php endif; endforeach; ?>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+
+        <?= $this->form()->closeTag($form); ?>
+
+    </div>
+
+</div>
