@@ -13,6 +13,10 @@
         }
     ],
     "minimum-stability": "dev",
+    "config": {
+        "bin-dir": "bin/",
+        "process-timeout": 3000
+    },
     "scripts": {
         "serve": "php -S 0.0.0.0:8080 -t public/ public/index.php"
     }

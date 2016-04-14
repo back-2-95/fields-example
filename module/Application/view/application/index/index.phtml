@@ -24,35 +24,22 @@ $form->prepare();
 
         <?= $this->form()->openTag($form); ?>
 
-        <?php foreach ($entity_configuration->getFields() as $fname => $field): if (isset($field->form)): ?>
+        <?php
+
+        /** @var Zend\Form\Element $field */
+        foreach ($form as $field):
+
+        ?>
 
             <div class="form-group">
 
-                <label><?= $field->name ?></label>
-
-                <?php if ($field->form->widget === 'text'): ?>
-
-                    <input name="<?= $fname ?>" type="text" class="form-control" placeholder="Text input">
-
-                <?php elseif ($field->form->widget === 'editor'): ?>
-
-                    <textarea name="<?= $fname ?>" class="form-control editor" rows="3"></textarea>
-
-                <?php elseif ($field->form->widget === 'image'): ?>
-
-                    <input name="<?= $fname ?>" type="file">
-
-                <?php elseif ($field->form->widget === 'tags'): ?>
-
-                    <input name="<?= $fname ?>" type="text">
-
-                <?php endif; ?>
+                <?= ($field->getLabel()) ? $this->formLabel($field) : ''; ?>
+                <?= $this->formElement($field); ?>
+                <?= $this->formElementErrors($field); ?>
 
             </div>
 
-        <?php endif; endforeach; ?>
-
-        <button type="submit" class="btn btn-default">Submit</button>
+        <?php endforeach; ?>
 
         <?= $this->form()->closeTag($form); ?>
 

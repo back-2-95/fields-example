@@ -48,9 +48,8 @@ class IndexController extends AbstractActionController
                     case 'text':
                     case 'tags':
 
-                        $el = new Element($fname);
+                        $el = new Element\Text($fname);
                         $el->setAttributes([
-                            'type'  => 'text',
                             'class' => 'form-control'
                         ]);
 
@@ -60,7 +59,6 @@ class IndexController extends AbstractActionController
 
                         $el = new Element\Textarea($fname);
                         $el->setAttributes([
-                            'type'  => 'text',
                             'class' => 'form-control editor'
                         ]);
 
@@ -92,12 +90,12 @@ class IndexController extends AbstractActionController
             }
         }
 
-        $send = new Element('send');
+        $send = new Element\Submit('send');
         $send->setValue('Submit');
-        $send->setAttributes(array(
-            'type'  => 'submit'
-        ));
-
+        $send->setAttributes([
+            'class'  => 'btn btn-default'
+        ]);
+        
         $form->add($send);
 
 
