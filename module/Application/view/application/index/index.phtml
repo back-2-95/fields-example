@@ -46,3 +46,10 @@ $form->prepare();
     </div>
 
 </div>
+<?php $this->inlineScript()->captureStart(); ?>
+
+CKEDITOR.replaceAll('editor', function(textarea, config) {
+    config.toolbar = 'Basic';
+});
+
+<?php $this->inlineScript()->captureEnd(); ?>

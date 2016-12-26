@@ -8,7 +8,7 @@
  */
 namespace Application\Controller;
 
-use BackTo95\Fields\Api;
+use BackTo95\Fields\API;
 use BackTo95\Fields\Entity\EntityConfiguration;
 use BackTo95\Fields\Storage\FileStorage;
 use Zend\Form\Element;
@@ -22,7 +22,7 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        $api = new Api();
+        $api = new API();
         $storage = new FileStorage('data/entities');
         $api->setStorage($storage);
 
@@ -40,7 +40,7 @@ class IndexController extends AbstractActionController
         $form = new Form($entity_configuration->getName());
         $inputFilter = new InputFilter();
 
-// Loop entity fields
+        // Loop entity fields
         foreach ($entity_configuration->getFields() as $fname => $field) {
             // Take in only the fields with form configuration
             if (isset($field->form)) {
@@ -72,8 +72,14 @@ class IndexController extends AbstractActionController
                         ]);
 
                         break;
+
+                    default:
+
+                        // Fallback?
+                        $el = new Element($fname);
                 }
 
+                // Set label
                 $el->setLabel($field->name);
 
                 $input = new Input($fname);
@@ -90,18 +96,13 @@ class IndexController extends AbstractActionController
             }
         }
 
-        $send = new Element\Submit('send');
-        $send->setValue('Submit');
+        $send = new Element\Submit('submit');
+        $send->setValue('Create');
         $send->setAttributes([
             'class'  => 'btn btn-default'
         ]);
         
         $form->add($send);
-
-
-// configure input... and all others
-
-// attach all inputs
 
         $form->setInputFilter($inputFilter);
 
